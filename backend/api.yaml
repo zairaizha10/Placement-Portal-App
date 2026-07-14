@@ -1,0 +1,317 @@
+openapi: 3.0.0
+
+info:
+  title: Placement Portal API
+  version: 1.0.0
+  description: |
+    Placement Portal REST API built using Flask, JWT Authentication,
+    SQLite, Celery and Redis (Memurai).
+
+servers:
+  - url: http://127.0.0.1:5000/api
+
+tags:
+  - name: Authentication
+  - name: Student
+  - name: Company
+  - name: Admin
+
+paths:
+
+  /login:
+    post:
+      tags:
+        - Authentication
+      summary: Login User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login Successful
+
+  /register/student:
+    post:
+      tags:
+        - Authentication
+      summary: Register Student
+      responses:
+        '200':
+          description: Student Registered Successfully
+
+  /register/company:
+    post:
+      tags:
+        - Authentication
+      summary: Register Company
+      responses:
+        '200':
+          description: Company Registration Submitted
+
+  /student/profile:
+    get:
+      tags:
+        - Student
+      security:
+        - bearerAuth: []
+      summary: View Student Profile
+      responses:
+        '200':
+          description: Student Profile
+
+    put:
+      tags:
+        - Student
+      security:
+        - bearerAuth: []
+      summary: Update Student Profile
+      responses:
+        '200':
+          description: Profile Updated
+
+  /student/drives:
+    get:
+      tags:
+        - Student
+      security:
+        - bearerAuth: []
+      summary: View Approved Drives
+      responses:
+        '200':
+          description: List of Drives
+
+  /student/search-drives:
+    get:
+      tags:
+        - Student
+      security:
+        - bearerAuth: []
+      summary: Search Drives
+      parameters:
+        - in: query
+          name: keyword
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Matching Drives
+
+  /student/apply/{drive_id}:
+    post:
+      tags:
+        - Student
+      security:
+        - bearerAuth: []
+      summary: Apply to Placement Drive
+      parameters:
+        - in: path
+          name: drive_id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Application Submitted
+
+  /student/applications:
+    get:
+      tags:
+        - Student
+      security:
+        - bearerAuth: []
+      summary: View My Applications
+      responses:
+        '200':
+          description: List of Applications
+
+  /student/resume:
+    put:
+      tags:
+        - Student
+      security:
+        - bearerAuth: []
+      summary: Update Resume
+      responses:
+        '200':
+          description: Resume Updated
+
+  /student/export-applications:
+    post:
+      tags:
+        - Student
+      security:
+        - bearerAuth: []
+      summary: Export Applications CSV
+      responses:
+        '202':
+          description: Export Started
+
+  /student/export-download:
+    get:
+      tags:
+        - Student
+      security:
+        - bearerAuth: []
+      summary: Download Exported CSV
+      responses:
+        '200':
+          description: CSV File
+
+  /student/resume/check:
+    post:
+      tags:
+        - Student
+      security:
+        - bearerAuth: []
+      summary: ATS Resume Checker
+      responses:
+        '200':
+          description: ATS Score
+
+  /company/drives:
+    post:
+      tags:
+        - Company
+      security:
+        - bearerAuth: []
+      summary: Create Placement Drive
+      responses:
+        '200':
+          description: Drive Created
+
+    get:
+      tags:
+        - Company
+      security:
+        - bearerAuth: []
+      summary: View Company Drives
+      responses:
+        '200':
+          description: Company Drives
+
+  /company/applications/{drive_id}:
+    get:
+      tags:
+        - Company
+      security:
+        - bearerAuth: []
+      summary: View Applications for Drive
+      parameters:
+        - in: path
+          name: drive_id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Applications
+
+  /admin/dashboard:
+    get:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: Dashboard Statistics
+      responses:
+        '200':
+          description: Dashboard Data
+
+  /admin/analytics:
+    get:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: Analytics
+      responses:
+        '200':
+          description: Analytics
+
+  /admin/companies/pending:
+    get:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: Pending Companies
+
+  /admin/company/{company_id}/approve:
+    put:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: Approve Company
+
+  /admin/company/{company_id}/reject:
+    put:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: Reject Company
+
+  /admin/drives/pending:
+    get:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: Pending Drives
+
+  /admin/drive/{drive_id}/approve:
+    put:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: Approve Drive
+
+  /admin/drive/{drive_id}/reject:
+    put:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: Reject Drive
+
+  /admin/applications:
+    get:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: View All Applications
+
+  /admin/report/pdf:
+    get:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: Download Monthly PDF Report
+
+  /admin/report/html:
+    get:
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      summary: Download Monthly HTML Report
+
+components:
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

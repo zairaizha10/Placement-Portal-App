@@ -1,0 +1,36 @@
+.applications-page {
+    padding: 30px;
+    background: lightpink;
+    min-height: 100vh;
+}
+
+.applications-page h1 {
+    color: #1e3a8a;
+    margin-bottom: 25px;
+}
+
+.application-list {
+    display: grid;
+    gap: 20px;
+}
+
+.application-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.application-card:hover {
+    transform: translateY(-4px);
+}
+
+.application-card h2 {
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.application-card p {
+    margin: 8px 0;
+}

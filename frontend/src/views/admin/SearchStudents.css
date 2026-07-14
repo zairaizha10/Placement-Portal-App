@@ -1,0 +1,43 @@
+.search-page{
+
+    padding:30px;
+    background: lightpink;
+    min-height: 100vh;
+
+}
+
+.search-page input{
+
+    padding:10px;
+    width:300px;
+    margin-right:15px;
+
+}
+
+.search-page button{
+
+    padding:10px 20px;
+
+}
+
+table{
+
+    margin-top:30px;
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+th,td{
+
+    border:1px solid #ddd;
+    padding:12px;
+
+}
+
+th{
+
+    background:#2563eb;
+    color:white;
+
+}

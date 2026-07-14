@@ -1,0 +1,43 @@
+.drives-page{
+
+    padding:30px;
+    background: rgb(243, 181, 190);
+    min-height: 100vh;
+
+}
+
+.drives-page h1{
+
+    color:#1e3a8a;
+    margin-bottom:25px;
+
+}
+
+.drive-list{
+
+    display:grid;
+    gap:20px;
+
+}
+
+.drive-card{
+
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+
+}
+
+.drive-card h2{
+
+    color:#2563eb;
+    margin-bottom:10px;
+
+}
+
+.drive-card p{
+
+    margin:8px 0;
+
+}

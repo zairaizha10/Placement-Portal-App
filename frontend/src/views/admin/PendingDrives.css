@@ -1,0 +1,59 @@
+.pending-page{
+
+    padding:30px;
+    background: lightpink;
+    min-height: 100vh;
+
+}
+
+.pending-page h1{
+
+    color:#1e3a8a;
+    margin-bottom:20px;
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+th,td{
+
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+
+}
+
+th{
+
+    background:#2563eb;
+    color:white;
+
+}
+
+button{
+
+    margin-right:10px;
+    padding:8px 15px;
+    border:none;
+    border-radius:6px;
+    color:white;
+    cursor:pointer;
+
+}
+
+button:first-child{
+
+    background:green;
+
+}
+
+button:last-child{
+
+    background:red;
+
+}

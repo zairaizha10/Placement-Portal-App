@@ -1,0 +1,54 @@
+.analytics-page{
+
+    padding:30px;
+    background: lightpink;
+    min-height: 100vh;
+
+}
+
+.analytics-page h1{
+
+    margin-bottom:25px;
+    color:#1e3a8a;
+
+}
+
+.analytics-cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+
+}
+
+.card{
+
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+
+}
+
+.card h3{
+
+    color:#555;
+
+}
+
+.card h2{
+
+    margin-top:15px;
+    color:#2563eb;
+
+}

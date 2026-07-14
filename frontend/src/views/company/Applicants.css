@@ -1,0 +1,60 @@
+.applications-page{
+    padding:30px;
+    background: rgb(243, 181, 190);
+    min-height: 100vh;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    gap:12px;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:12px;
+
+}
+    
+th{
+    text-align:center;
+    gap:12px;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+    gap:12px;
+}
+
+.schedule-section{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.schedule-inputs{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.schedule-inputs input{
+    flex:1;
+    min-width:170px;
+}
+
+.schedule-btn{
+    width:100%;
+    margin-bottom:10px;
+}
+
+.action-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.action-buttons button{
+    width:100%;
+}

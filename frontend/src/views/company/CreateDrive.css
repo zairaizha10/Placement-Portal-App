@@ -1,0 +1,48 @@
+.drive-page{
+
+    padding:30px;
+    background: rgb(243, 181, 190);
+    min-height: 100vh;
+
+}
+
+.drive-page h1{
+
+    color:#1e3a8a;
+    margin-bottom:25px;
+
+}
+
+.drive-form{
+
+    max-width:600px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+}
+
+.drive-form input{
+
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+
+}
+
+.drive-form button{
+
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+
+}
+
+.drive-form button:hover{
+
+    background:#1d4ed8;
+
+}
