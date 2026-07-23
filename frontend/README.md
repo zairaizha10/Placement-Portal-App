@@ -37,4 +37,18 @@ npm run dev
 npm run build
 ```
 
+## python -m celery -A celery_app.celery worker --pool=solo --loglevel=info
+## python -m celery -A celery_app.celery beat --loglevel=info
+## python -m venv venv
+## .\venv\Scripts\Activate.ps1
+## cd .\23f3001132
+## pip install -r requirements.txt
+## run backend
+## npm install
+
+## C:\Users\zaira\Downloads\jcFCNFFUeT\23f3001132\backend\venv\Scripts\python.exe
+## python -m celery -A celery_app.celery worker --loglevel=info
+## tasklist | findstr memurai
+
+
 
